@@ -1,5 +1,5 @@
 {
-  "name": "ZeldaWiki",
+  "name": "zeldawiki",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
-    "@nuxt/typescript-build": "^2.1.0"
+    "@nuxt/typescript-build": "^2.1.0",
+    "webpack": "^4.46.0"
   }
 }
