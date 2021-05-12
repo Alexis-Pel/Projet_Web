@@ -1,28 +1,9 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
       <h1 class="title">
         ZeldaWiki
       </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>
@@ -36,11 +17,12 @@ export default Vue.extend({})
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  background-color: #526488;
 }
 
 .title {
@@ -56,7 +38,7 @@ export default Vue.extend({})
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 80px;
   color: #35495e;
   letter-spacing: 1px;
 }
