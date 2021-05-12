@@ -1,9 +1,17 @@
 <template>
-  <div class="container">
-    <div>
+  <div>
+    <div class="container">
       <h1 class="title">
         ZeldaWiki
       </h1>
+    </div>
+    <div class="linksMenu">
+      <NuxtLink to="/">Menu</NuxtLink>
+      <NuxtLink to="/">Armure</NuxtLink>
+      <NuxtLink to="/">Monstres</NuxtLink>
+      <NuxtLink to="/">Montures</NuxtLink>
+      <NuxtLink to="/">Armes</NuxtLink>
+      <NuxtLink to="/">Nourriture</NuxtLink>
     </div>
   </div>
 </template>
@@ -15,6 +23,26 @@ export default Vue.extend({})
 </script>
 
 <style>
+a{
+  padding: 15px;
+  background-color: #526488b4;
+  border:solid 1px #2a3949
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #00c58e;
+}
+
+.linksMenu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
 .container {
   margin: 0 auto;
   min-height: 10vh;
