@@ -14,11 +14,11 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <NuxtLink class="nav-link" to="/">Menu</NuxtLink>
-              <NuxtLink class="nav-link" to="/">Carte</NuxtLink>
+              <NuxtLink class="nav-link" to="/carte">Carte</NuxtLink>
               <NuxtLink class="nav-link" to="/">Armes</NuxtLink>
               <NuxtLink class="nav-link" to="/">Armures</NuxtLink>
               <NuxtLink class="nav-link" to="/">Monstres</NuxtLink>
-              <NuxtLink class="nav-link" to="/">Nourriture</NuxtLink>
+              <NuxtLink class="nav-link" to="/nourriture">Nourriture</NuxtLink>
             </div>
           </div>
         </div>
