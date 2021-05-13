@@ -1,19 +1,5 @@
 <template>
-  <div>
-    <div class="container">
-      <h1 class="title">
-        ZeldaWiki
-      </h1>
-    </div>
-    <div class="linksMenu">
-      <NuxtLink to="/">Menu</NuxtLink>
-      <NuxtLink to="/">Armure</NuxtLink>
-      <NuxtLink to="/">Monstres</NuxtLink>
-      <NuxtLink to="/">Montures</NuxtLink>
-      <NuxtLink to="/">Armes</NuxtLink>
-      <NuxtLink to="/">Nourriture</NuxtLink>
-    </div>
-  </div>
+<MenuBar />
 </template>
 
 <script lang="ts">
