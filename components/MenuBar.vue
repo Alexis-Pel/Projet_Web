@@ -4,6 +4,7 @@
       <h1 class="title">
         ZeldaWiki
       </h1>
+      <p style="font-size: 1.5vh; color: white;"> Le Wiki de Zelda : Breath Of The Wild </p>
     </div>
     <div class='linksMenu'>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -53,8 +54,9 @@ a:hover {
   margin: 0 auto;
   min-height: 10vh;
   display: flex;
+  flex-direction:column;
   justify-content: center;
-  align-items: flex-start;
+  align-items:center;
   text-align: center;
   background-color: #526488;
 }
