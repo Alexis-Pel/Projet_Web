@@ -1,6 +1,6 @@
 <template>
     <div class="abc">
-        <b-jumbotron header="Wiki Zelda" lead="Bievenue dans le wiki Zelda BOTW" style="position: absolute; margin-left:75vh">
+        <b-jumbotron header="Wiki Zelda" lead="Bievenue dans le wiki Zelda BOTW">
         <p >Voici le guide ultime sur le jeu !</p>
         </b-jumbotron> 
         <video id="idVideo" autoplay loop muted>
@@ -25,10 +25,13 @@
   }
   .jumbotron{
       background-color: transparent;
-      width: 100%;
+      width: fit-content;
+      margin-right: 85vh;
+      margin-top: 10vh;
       padding: 0;
       color: whitesmoke;
       font-family: 'Zelda Font';
+      position: absolute;
   }
 
 
