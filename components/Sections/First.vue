@@ -3,8 +3,8 @@
         <b-jumbotron header="Wiki Zelda" lead="Bievenue dans le wiki Zelda BOTW" style="position: absolute; margin-left:75vh">
         <p >Voici le guide ultime sur le jeu !</p>
         </b-jumbotron> 
-        <video id="idVideo" controls preload="true" autoplay loop muted>
-        <source src="" type="video/mp4" >
+        <video id="idVideo" autoplay loop muted>
+        <source src="/background/landing.mp4" type="video/mp4" >
         </video> 
     </div>
 </template>
@@ -14,7 +14,6 @@
 </script>
 
 <style scoped>
-
   .abc{
       min-height: 100vh; 
       height: 200px;
@@ -29,7 +28,7 @@
       width: 100%;
       padding: 0;
       color: white;
-      font-family: "Zelda Font", serif;
+      
   }
 
 
