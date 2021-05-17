@@ -1,5 +1,5 @@
 <template>
     <div>
-        <MenuBar />
+        Page food
     </div>
 </template>

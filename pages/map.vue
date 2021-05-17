@@ -1,6 +1,5 @@
 <template>
     <div>
-        <MenuBar />
         <div class="imgBox">
             <img class="hyrule-map" src="https://i.pinimg.com/originals/39/22/d3/3922d3bb589c56a299486b90cd28b3a9.jpg">
         </div>
