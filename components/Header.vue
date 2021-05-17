@@ -6,12 +6,13 @@
    <nav>
      <div class="navbar">
         <div class="categories">
-           <NuxtLink class="linkMenu" to="/">Home</NuxtLink>
-           <NuxtLink class="linkMenu" to="/food">Food</NuxtLink>
-           <NuxtLink class="linkMenu" to="/map">Map</NuxtLink>
-           <NuxtLink class="linkMenu" to="/weapon">Armes</NuxtLink>
-           <NuxtLink class="linkMenu" to="/armor">Armures</NuxtLink>
-           <NuxtLink class="linkMenu" to="/">Histoire</NuxtLink>
+           <NuxtLink class="linkMenu" to="/">accueil</NuxtLink>
+           <NuxtLink class="linkMenu" to="/map">carte du monde</NuxtLink>
+           <NuxtLink class="linkMenu" to="/food">nourriture</NuxtLink>
+           <NuxtLink class="linkMenu" to="/">animaux</NuxtLink>
+           <NuxtLink class="linkMenu" to="/weapon">armes</NuxtLink>
+           <NuxtLink class="linkMenu" to="/armor">armures</NuxtLink>
+           <NuxtLink class="linkMenu" to="/">histoire</NuxtLink>
         </div>
      </div>
    </nav>
@@ -35,15 +36,16 @@
     }
 
 .navbar {
+  font-family: "Zelda Font";
   margin-top: 1.5rem;
   /* position: absolute; */
-  padding: 10px 10px;
+  padding: 10px 11px;
   background: rgba(79, 112, 150, 0.3);
   font-size: 20px;
   line-height: 1.5;
   border-radius: 2rem;
-  width: 550px;
-  height: 70px;
+  width: 700px;
+  height: 45px;
   overflow: hidden;
   display: flex;
   justify-content: space-around;
