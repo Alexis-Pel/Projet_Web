@@ -40,7 +40,7 @@
   margin-top: 1.5rem;
   /* position: absolute; */
   padding: 10px 11px;
-  background: rgba(79, 112, 150, 0.3);
+  background: rgba(29, 168, 126, 0.3);
   font-size: 20px;
   line-height: 1.5;
   border-radius: 2rem;

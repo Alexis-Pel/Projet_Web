@@ -27,8 +27,8 @@
       background-color: transparent;
       width: 100%;
       padding: 0;
-      color: white;
-      
+      color: whitesmoke;
+      font-family: 'Zelda Font';
   }
 
 
