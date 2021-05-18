@@ -1,12 +1,15 @@
 <template>
     <div>
         <div class="imgBox">
-            <img class="hyrule-map" src="https://i.pinimg.com/originals/39/22/d3/3922d3bb589c56a299486b90cd28b3a9.jpg">
+            <img class="hyrule-map" src="background/Map.jpg">
         </div>
     </div>
 </template>
 
 <style>
+    body{
+        background-color: rgb(55, 53, 61);
+    }
     .imgBox{
         display: flex;
         justify-content: center;
@@ -18,5 +21,6 @@
         max-width: 150vh;
         width: 150vh;
         height: 110vh;
+        margin-top: 5vh;
     }
 </style>
