@@ -9,7 +9,7 @@ Yann OBAMA, Alexis PELISSIER, Alexis RABILLER, Kilian COUDRAY, Fabala DEMBELE.
 ## Commandes à faire avant de commencer
 
 ```bash
-# install dependencies
+# installer les dépendances
 $ npm install
 
 # Lancer le serveur local qui redirigera vers cet url: localhost:3000
