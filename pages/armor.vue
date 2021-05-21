@@ -86,6 +86,7 @@
 <script>
 
   export default {
+    transition: 'slide-bottom',
     data() {
       return {
         perPage: 4,

@@ -6,6 +6,7 @@
     </div>
 </template>
 
+
 <style>
     .imgBox{
         display: flex;
