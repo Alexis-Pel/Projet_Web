@@ -16,6 +16,7 @@
                 class="mb-2"
                 :armorData="armorData"
               >
+               <img v-bind:src="`${armor.imgArmor}`" class="imgCard" />
               
               <b-card-text>
                 {{armor.nameArmor}} 
@@ -121,6 +122,7 @@
     filter: blur(5px);
   }
 
+
   .mt-3{
     margin-top: 2rem;
     padding-left: 2rem;
@@ -150,10 +152,9 @@
   }
   .mb-2{
     margin: 5rem;
-    width: 230px;
-    height: 200px;
+    width: 270px;
+    height: 240px;
     border-radius: 1.5rem;
-    background-image: url("https://picsum.photos/600/300/?image=25");
     background-size: cover;  
     background-position: center;    
     overflow: hidden;       
@@ -165,6 +166,17 @@
     bottom: 0;
     left: 0;
     filter: blur(30px);
+  }
+  .imgCard {
+     width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-text{
+    text-align: center;
+    position: absolute;
+    color: rgba(211, 210, 210, 0.932);
   }
 /* .modal-container{
   display: none;

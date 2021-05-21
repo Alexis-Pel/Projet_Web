@@ -1,7 +1,10 @@
 <template>
     <div class="containerStory">
-        <h1>En cours de construction</h1>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdqCr4KKoJ0Q34X1W3gqtHR89tslPPsn2aQw&usqp=CAU">
+        <div class="overflow">
+            <h1>En cours de construction</h1>
+          <img src="../static/background/link-cutout.png">
+        </div>
+        
     </div>
 </template>
 
@@ -27,8 +30,37 @@
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    min-height:100vh;
     font-family:"Zelda Font";
-    background-color:#FFFFFF;
+    background-image: url('../static/background/Main-Day.jpeg');
+    width: 100%;
+    min-height: 100vh; 
+    z-index: -100;  
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 8rem 0rem 8rem;
 }
+.overflow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    min-height: 85vh;
+    min-width: 85vh;
+    margin-bottom: 3rem;
+    width: 100%;
+    border-radius: 1rem;
+    background: rgba(254, 255, 255, 0.795);
+    line-height: 1;
+    overflow: hidden;
+  }
+
+  .overflow::before {
+    content: '';
+    margin: -35px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(5px);
+  }
 </style>

@@ -9,14 +9,33 @@
             :key="index"
             v-for="(sanctuaire, index) in currentPageSanctuaries"
             >
+
+            <!-- <div>
+            <b-card
+            title="Card Title"
+            v-bind:src="`${sanctuaire.imgSanctuary}`" 
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2"
+            >
+            <b-card-text>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+            </b-card-text>
+
+            <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+            </div> -->
+
               <b-card
                 img-top
                 tag="article"
-                style="max-width: 20rem; margin:0px; padding:0px;"
+                style="max-width: 20rem; margin:0px; padding:0px; "
                 class="mb-2"
                 :sanctuaryData="sanctuaryData"
               >
-              
+             <img v-bind:src="`${sanctuaire.imgSanctuary}`" class="imgCard" />
               <b-card-text>
                 {{sanctuaire.nameSanctuary}} 
               </b-card-text>
@@ -120,6 +139,7 @@
     filter: blur(5px);
   }
 
+
   .mt-3{
     margin-top: 2rem;
     padding-left: 2rem;
@@ -149,10 +169,9 @@
   }
   .mb-2{
     margin: 5rem;
-    width: 230px;
-    height: 200px;
+    width: 270px;
+    height: 240px;
     border-radius: 1.5rem;
-    background-image: url("https://picsum.photos/600/300/?image=25");
     background-size: cover;  
     background-position: center;    
     overflow: hidden;       
@@ -164,6 +183,17 @@
     bottom: 0;
     left: 0;
     filter: blur(30px);
+  }
+  .imgCard {
+     width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-text{
+    text-align: center;
+    position: absolute;
+    color: rgba(231, 231, 231, 0.733);
   }
 /* .modal-container{
   display: none;
