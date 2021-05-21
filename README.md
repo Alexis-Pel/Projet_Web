@@ -2,7 +2,7 @@
 
 Zelda wiki est un guide pour tous les joueurs qui ont besoin d'aide, que ce soit des joueurs débutants ou expérimenté. Facile à prendre en main avec un design minimaliste et beau visuellement.
 
-# Autheurs
+# Auteurs
 Yann OBAMA, Alexis PELISSIER, Alexis RABILLER, Kilian COUDRAY, Fabala DEMBELE.
 
 
