@@ -22,6 +22,49 @@
                 {{armor.nameArmor}} 
               </b-card-text>
 
+               <input type="button" class="btn btn-success btn-xs" @click="myModal=true" value="Description" />
+
+                <div v-if="myModal">
+                  <transition name="modal">
+                    <div class="modal-mask">
+                      <div class="modal-wrapper">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" @click="myModal=false"> <span aria-hidden="true">&times;</span>
+                              </button>
+                              <h4 class="modal-title">{{armor.nameArmor}}</h4>
+                              <div class="modal-body">
+                                <div>
+                                  <b-carousel
+                                    id="carousel-fade"
+                                    style="text-shadow: 0px 0px 2px #000"
+                                    fade
+                                    indicators
+                                    img-width="60%"
+                                    img-height="40%"
+                                  >
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=10"
+                                    ></b-carousel-slide>
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=12"
+                                    ></b-carousel-slide>
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=22"
+                                    ></b-carousel-slide>
+                                  </b-carousel>
+                                </div>
+                                <div class="form-group">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </transition>
+                </div>
             
               </b-card>
             </div> 
@@ -41,7 +84,7 @@
 </template>
 
 <script>
-  
+
   export default {
     data() {
       return {
@@ -51,6 +94,7 @@
         PageArmor: {},
         totalRows: this.armorData,
         nbPages:0,
+        myModal : false,
       }              
     },
 
@@ -59,7 +103,12 @@
         .then(res => res.json())
         // .then(res => console.log(res))
     },
-
+      methods : {
+        openModal() {
+         this.myModal = true;
+        // this.titleModal = ;
+        }
+      }, 
     
     computed: {
       rows() {
@@ -178,37 +227,27 @@
     position: absolute;
     color: rgba(211, 210, 210, 0.932);
   }
-/* .modal-container{
-  display: none;
-  background-color: rgba(0,0,0, 0.3);
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top:0;
-  left: 0;
-  height:100vh;
-  width:100vh;
-}
-button {
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,8.2);
-  background-color: #47a386;
-  font-size: 14px;
-  color: white;
-  padding: 10px 25px;
-  width 50%;
-  height:30%;
-}
 
-.modal{
-  background-color: white;
-  border-radius: 5px;
-  padding: 30px 50px;
-  width: 600px;
-  max-width: 100%;
-  text-align: center;
-} */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+.modal-header{
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.btn {
+  position: absolute;
+}
+.btn-success{
+  margin-top: 5.5rem;
+}
 </style>

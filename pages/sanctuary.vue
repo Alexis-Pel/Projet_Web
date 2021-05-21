@@ -7,27 +7,7 @@
             :per-page="perPage"
             :current-page="currentPage" 
             :key="index"
-            v-for="(sanctuaire, index) in currentPageSanctuaries"
-            >
-
-            <!-- <div>
-            <b-card
-            title="Card Title"
-            v-bind:src="`${sanctuaire.imgSanctuary}`" 
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-            >
-            <b-card-text>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
-
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-            </div> -->
-
+            v-for="(sanctuaire, index) in currentPageSanctuaries">
               <b-card
                 img-top
                 tag="article"
@@ -35,11 +15,55 @@
                 class="mb-2"
                 :sanctuaryData="sanctuaryData"
               >
+              <div></div>
              <img v-bind:src="`${sanctuaire.imgSanctuary}`" class="imgCard" />
               <b-card-text>
                 {{sanctuaire.nameSanctuary}} 
               </b-card-text>
 
+                <input type="button" class="btn btn-success btn-xs" @click="myModal=true" value="Description" />
+
+                <div v-if="myModal">
+                  <transition name="modal">
+                    <div class="modal-mask">
+                      <div class="modal-wrapper">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" @click="myModal=false"> <span aria-hidden="true">&times;</span>
+                              </button>
+                              <h4 class="modal-title">{{sanctuaire.nameSanctuary}}</h4>
+                              <div class="modal-body">
+                                <div>
+                                  <b-carousel
+                                    id="carousel-fade"
+                                    style="text-shadow: 0px 0px 2px #000"
+                                    fade
+                                    indicators
+                                    img-width="60%"
+                                    img-height="40%"
+                                  >
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=10"
+                                    ></b-carousel-slide>
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=12"
+                                    ></b-carousel-slide>
+                                    <b-carousel-slide
+                                      img-src="https://picsum.photos/1024/480/?image=22"
+                                    ></b-carousel-slide>
+                                  </b-carousel>
+                                </div>
+                                <div class="form-group">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </transition>
+                </div>
             
               </b-card>
             </div> 
@@ -59,8 +83,8 @@
 </template>
 
 <script>
-
   export default {
+
     data() {
       return {
         perPage: 5,
@@ -69,13 +93,22 @@
         totalRows: this.animalsData,
         nbPages:0,
         sanctuaryData : [],
+        myModal : false,
+        titleModal: '',
+        descModal: '',
       }
     },
         async fetch() {
-       this.sanctuaryData  =  await fetch('http://localhost/ctrlsanctuary.php')
+       this.sanctuaryData  =  await fetch('http://localhost/ctrlsanctuary.php',)
         .then(res => res.json())
         // .then(res => console.log(res))
     },
+    methods : {
+      openModal() {
+        this.myModal = true;
+      // this.titleModal = ;
+      }
+    }, 
     computed: {
       rows() {
         return this.sanctuaryData.length 
@@ -100,7 +133,10 @@
       return this.PageSanctuarie[this.currentPage-1];
       }
     },
-  }
+    
+    }
+    
+  
 </script>
 
 <style scoped>
@@ -195,37 +231,28 @@
     position: absolute;
     color: rgba(231, 231, 231, 0.733);
   }
-/* .modal-container{
-  display: none;
-  background-color: rgba(0,0,0, 0.3);
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
+
+.modal-mask {
   position: fixed;
-  top:0;
+  z-index: 9998;
+  top: 0;
   left: 0;
-  height:100vh;
-  width:100vh;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .5);
+  display: table;
+  transition: opacity .3s ease;
 }
-button {
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,8.2);
-  background-color: #47a386;
-  font-size: 14px;
-  color: white;
-  padding: 10px 25px;
-  width 50%;
-  height:30%;
+.modal-header{
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.btn {
+  position: absolute;
+}
+.btn-success{
+  margin-top: 5.5rem;
 }
 
-.modal{
-  background-color: white;
-  border-radius: 5px;
-  padding: 30px 50px;
-  width: 600px;
-  max-width: 100%;
-  text-align: center;
-} */
 </style>
