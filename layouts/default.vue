@@ -4,9 +4,9 @@
     <Nuxt />
   </div>
 </template>
+
+
 <script>
-
-
 </script>
 
 <style>
@@ -23,11 +23,4 @@
   margin:0;
   box-sizing:border-box;
 }
-/* body{
-      min-height: 100vh; 
-      height: 200px;
-      background-image: url(../static/background/img.jpeg); 
-      background-size: cover;
-      background-position: center;
-} */
 </style>

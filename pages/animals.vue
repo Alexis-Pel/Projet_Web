@@ -1,24 +1,24 @@
 <template>
-    <div class="contaiiner containerArmor">
+    <div class="contaiiner containerAnimals">
       <div class="overflow-auto">
-        <h1 class="mt-3">Armures</h1>
+       <h1 class="mt-3">Animaux</h1>
         <div class="cards">
           <div class="my-table" 
             :per-page="perPage"
             :current-page="currentPage" 
             :key="index"
-            v-for="(armor, index) in currentPageArmors"
+            v-for="(animal, index) in currentPageAnimals"
             >
               <b-card
                 img-top
                 tag="article"
                 style="max-width: 20rem; margin:0px; padding:0px;"
                 class="mb-2"
-                :armorData="armorData"
+                :animalsData="animalsData"
               >
               
               <b-card-text>
-                {{armor.nameArmor}} 
+                {{animal.nameAnimal}} 
               </b-card-text>
 
             
@@ -40,46 +40,45 @@
 </template>
 
 <script>
-  
+
   export default {
     data() {
       return {
-        perPage: 4,
+        perPage: 5,
         currentPage: 1,
-        armorData: [],
-        PageArmor: {},
-        totalRows: this.armorData,
+        PageAnimal: {},
+        totalRows: this.animalsData,
         nbPages:0,
-      }              
+        animalsData : [],
+      }
     },
-
-  async fetch() {
-       this.armorData = await fetch('http://localhost/ctrlarmor.php')
+        async fetch() {
+       this.animalsData  =  await fetch('http://localhost/ctrlanimals.php')
         .then(res => res.json())
         // .then(res => console.log(res))
     },
-
-    
     computed: {
       rows() {
-        return this.armorData.length 
+        return this.animalsData.length 
       },
+      
       pageCount() {
       let l = this.totalRows,
         s = this.perPage;
       return Math.floor(l / s);
     },
-      currentPageArmors() {
-      let lengthAll =this.armorData.length;
+      
+      currentPageAnimals() {
+      let lengthAll =this.animalsData.length;
       this.nbPages = 0;
       for (let i = 0; i < lengthAll; i = i + this.perPage) {
-      this.PageArmor[this.nbPages] = this.armorData.slice(
+      this.PageAnimal[this.nbPages] = this.animalsData.slice(
       i,
       i + this.perPage
       );
       this.nbPages++;
       }
-      return this.PageArmor[this.currentPage-1];
+      return this.PageAnimal[this.currentPage-1];
       }
     },
   }
@@ -93,7 +92,7 @@
       margin-top: 1em;
       margin-bottom: 1rem;
   }
-  .containerArmor{
+  .containerAnimals{
     background-image: url('../static/background/Main-Day.jpeg');
     width: 100%;
     min-height: 100vh; 

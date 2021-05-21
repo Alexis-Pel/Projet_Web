@@ -13,6 +13,11 @@ export default {
     ]
   },
 
+  server: {
+    port: 3000,
+    host: 'http://zeldawiki.test',
+},
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -40,10 +45,21 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true,
+  },
+  proxy: {
+    '/localhost:3000/animals.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'animals.php'}, changeOrigin: true },
+    '/localhost:3000/armor.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'armor.php'}, changeOrigin: true },
+    '/localhost:3000/weapon.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'weapon.php'}, changeOrigin: true },
+    '/lalocalhost:3000/feed.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'feed.php'}, changeOrigin: true },
+    '/lalocalhost:3000/story.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'story.php'}, changeOrigin: true },
+    '/lalocalhost:3000/sanctuary.php': { target: 'http://localhost:3000/', pathRewrite: {'^/localhost:3000/': 'sanctuary.php'}, changeOrigin: true },
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

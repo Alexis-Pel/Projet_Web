@@ -13,6 +13,6 @@
     }
     .hyrule-map {
         min-width: 100vh;
-        min-height: 11vh;
+        min-height: 100vh;
     }
 </style>

@@ -1,24 +1,24 @@
 <template>
-    <div class="contaiiner containerArmor">
+    <div class="contaiiner containerSanctuary">
       <div class="overflow-auto">
-        <h1 class="mt-3">Armures</h1>
+       <h1 class="mt-3">Sanctuaires</h1>
         <div class="cards">
           <div class="my-table" 
             :per-page="perPage"
             :current-page="currentPage" 
             :key="index"
-            v-for="(armor, index) in currentPageArmors"
+            v-for="(sanctuaire, index) in currentPageSanctuaries"
             >
               <b-card
                 img-top
                 tag="article"
                 style="max-width: 20rem; margin:0px; padding:0px;"
                 class="mb-2"
-                :armorData="armorData"
+                :sanctuaryData="sanctuaryData"
               >
               
               <b-card-text>
-                {{armor.nameArmor}} 
+                {{sanctuaire.nameSanctuary}} 
               </b-card-text>
 
             
@@ -40,46 +40,45 @@
 </template>
 
 <script>
-  
+
   export default {
     data() {
       return {
-        perPage: 4,
+        perPage: 5,
         currentPage: 1,
-        armorData: [],
-        PageArmor: {},
-        totalRows: this.armorData,
+        PageSanctuarie: {},
+        totalRows: this.animalsData,
         nbPages:0,
-      }              
+        sanctuaryData : [],
+      }
     },
-
-  async fetch() {
-       this.armorData = await fetch('http://localhost/ctrlarmor.php')
+        async fetch() {
+       this.sanctuaryData  =  await fetch('http://localhost/ctrlsanctuary.php')
         .then(res => res.json())
         // .then(res => console.log(res))
     },
-
-    
     computed: {
       rows() {
-        return this.armorData.length 
+        return this.sanctuaryData.length 
       },
+      
       pageCount() {
       let l = this.totalRows,
         s = this.perPage;
       return Math.floor(l / s);
     },
-      currentPageArmors() {
-      let lengthAll =this.armorData.length;
+      
+      currentPageSanctuaries() {
+      let lengthAll =this.sanctuaryData.length;
       this.nbPages = 0;
       for (let i = 0; i < lengthAll; i = i + this.perPage) {
-      this.PageArmor[this.nbPages] = this.armorData.slice(
+      this.PageSanctuarie[this.nbPages] = this.sanctuaryData.slice(
       i,
       i + this.perPage
       );
       this.nbPages++;
       }
-      return this.PageArmor[this.currentPage-1];
+      return this.PageSanctuarie[this.currentPage-1];
       }
     },
   }
@@ -93,7 +92,7 @@
       margin-top: 1em;
       margin-bottom: 1rem;
   }
-  .containerArmor{
+  .containerSanctuary{
     background-image: url('../static/background/Main-Day.jpeg');
     width: 100%;
     min-height: 100vh; 

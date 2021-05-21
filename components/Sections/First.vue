@@ -2,16 +2,14 @@
     <div class="abc">
         <b-jumbotron header="Wiki Zelda" lead="Bievenue dans le wiki Zelda BOTW">
         <p >Voici le guide ultime sur le jeu !</p>
+        <!-- <div> {{mountains}}</div> -->
         </b-jumbotron> 
         <video id="idVideo" autoplay loop muted>
         <source src="/background/landing.mp4" type="video/mp4" >
         </video> 
     </div>
 </template>
-<script>
 
-
-</script>
 
 <style scoped>
   .abc{
